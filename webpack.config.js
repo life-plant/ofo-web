@@ -38,7 +38,7 @@ var config = {
     preLoaders: [{
       test:    /\.js$/,
       exclude: /node_modules/,
-      loader: 'jscs-loader'
+      loader: 'eslint',
     }],
     loaders: [
       {test: /\.js$/, exclude: /(node_modules)/, loader: 'babel'},
@@ -46,7 +46,10 @@ var config = {
       {test: /\.s?css$/, loader: 'style!css!sass?includePaths[]=' + bourbon },
       {test: /\.(png|jpg)$/, loader: 'url-loader?mimetype=image/png'}
     ]
-  }
+  },
+  eslint: {  
+    configFile: './.eslintrc'
+  } 
 }
 
 switch (nodeEnvironment) {
